@@ -18,12 +18,23 @@ button{
   color:#1c1c1c;
 }
 
+.sResultLink{
+  display:block;
+}
+
+.sResultLink:focus .sResult{
+  z-index: 2;
+  box-shadow: 0 0 15px #3498db;
+}
+
+
 /*hide overflow to create same size gifs gallery*/
 .sResult{
   overflow: hidden;
   padding:0;
   position:relative;
   height:200px;
+  cursor:pointer;
 }
 
 /*center search results image*/
@@ -53,4 +64,20 @@ button{
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/*expanded image*/
+.fullScreen .sResult{
+  top:0;
+  padding:20% 0 0;
+  position:absolute;
+  width:100%;
+  height:100%;
+  z-index:2;
+  background: rgba(20,20,20,0.9);
+}
+
+
+.fullScreen img{
+  min-width:inherit;
 }

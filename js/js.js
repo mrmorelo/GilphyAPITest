@@ -24,8 +24,11 @@ response.data.forEach(function(x) {
   var giphyURL = x.images.fixed_height.url;
     console.log(giphyURL);
 
-  var imageResult = $('<div class="sResult col-xs-6 col-sm-4 col-md-3 col-lg-2"><div class="loader"></div><img src=' + giphyURL + ' /></div>');
-  imageResult.appendTo($('.searchResultField'));
+    var giphySlug = x.slug;
+      console.log(giphySlug);
+
+    var imageResult = $('<a href="javascript:;" class="sResultLink"><div class="sResult col-xs-6 col-sm-4 col-md-3 col-lg-2"><div class="loader"></div><img alt=" '+ q +' '+ giphySlug +' " src=' + giphyURL + ' /></div></a>');
+    imageResult.appendTo($('.searchResultField'));
 
   });
 
@@ -39,6 +42,11 @@ response.data.forEach(function(x) {
   }
 });
 
+});
+
+$(document).on('click', '.sResultLink', function() {
+  $( this ).toggleClass( "fullScreen" );
+  $("html, body").animate({ scrollTop: 0 }, "300");
 });
 
 });
