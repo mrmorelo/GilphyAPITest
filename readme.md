@@ -24,7 +24,6 @@ Display multiple results, from a loop, those itens will be able to be selected a
 
 * **Andre Morelo** - *Initial work*
 
-
 ## Acknowledgments
-
-* Stackoverflow.
+* these articles and projects helped me build this project up faster:
+(https://stackoverflow.com/questions/41620816/giphy-api-how-do-i-search-for-giphs/)

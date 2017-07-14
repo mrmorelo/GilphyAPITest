@@ -1,0 +1,19 @@
+body{
+  text-align: center;
+  background:#1c1c1c;
+  color:#efefef;
+}
+
+.info{
+  padding:0 0 20px;
+}
+
+input[type=text]{
+  color:#1c1c1c;
+}
+
+input[type=reset],
+button{
+  background:#efefef;
+  color:#1c1c1c;
+}
