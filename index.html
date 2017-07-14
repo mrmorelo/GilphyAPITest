@@ -12,21 +12,18 @@
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-12 info">
+      <div class="col-sm-12 controlBox outerWrapper">
         <h1>Find your GIF!</h1>
-        <form class="gif-form">
-          <input type="text" id="form-value" class="search-input-rounded">
-          <button type="submit" class="search_button"> Search for GIFs </button>
-          <input type="reset" id="reset_button" value="Reset">
+        <form>
+          <input type="text" id="userQuery" value="" placeholder="">
+          <button type="submit" id="searchButton">Search</button>
         </form>
       </div>
     </div>
-    <div class="row">
-      <div class="rando_facts animated bounceIn">
-        <img id="here_is_gif" src=""/>
-      </div>
-    </div>
-  </div>
+
+    <section class="searchResultField row">
+    </section>
+  </div><!-- END CONTAINER -->
 
 <!-- Link in jQuery from CDN -->
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

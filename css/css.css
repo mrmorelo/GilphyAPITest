@@ -1,11 +1,11 @@
 body{
-  text-align: center;
+  text-align:center;
   background:#1c1c1c;
   color:#efefef;
 }
 
-.info{
-  padding:0 0 20px;
+.controlBox{
+    padding:20px;
 }
 
 input[type=text]{
@@ -16,4 +16,41 @@ input[type=reset],
 button{
   background:#efefef;
   color:#1c1c1c;
+}
+
+/*hide overflow to create same size gifs gallery*/
+.sResult{
+  overflow: hidden;
+  padding:0;
+  position:relative;
+  height:200px;
+}
+
+/*center search results image*/
+.sResult img{
+		min-width:100%;
+		max-width:none;
+		margin:0 -100%;
+}
+
+/*makes loader behind images that are loading*/
+.loader {
+    border: 3px solid #f3f3f3; /* Light grey */
+    border-top: 3px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 2s linear infinite;
+    position:absolute;
+    z-index:-1;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    top:90px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
