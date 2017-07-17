@@ -2,6 +2,7 @@ $( document ).ready(function(){
 
 // Construct the URL
 $('#searchButton').on('click', function(e){
+  // Grab the img using the id and change the src to empty to remove the image
   $('.searchResultField').empty();
   e.preventDefault();
 
@@ -24,17 +25,16 @@ response.data.forEach(function(x) {
   var giphyURL = x.images.fixed_height.url;
     console.log(giphyURL);
 
-    var giphySlug = x.slug;
-      console.log(giphySlug);
+  var giphySlug = x.slug;
+    console.log(giphySlug);
 
-    var imageResult = $('<a href="javascript:;" class="sResultLink"><div class="sResult col-xs-6 col-sm-4 col-md-3 col-lg-2"><div class="loader"></div><img alt=" '+ q +' '+ giphySlug +' " src=' + giphyURL + ' /></div></a>');
+    var giphyUrl = x.url;
+    console.log(giphyUrl);
+
+
+    var imageResult = $('<div tabindex="0" role="treeitem" aria=haspopup="true" class="sResult col-xs-6 col-sm-4 col-md-3 col-lg-2"><div class="loader"></div><img alt=" '+ q +' '+ giphySlug +' " src=' + giphyURL + ' /><p>URL: <a role="link" href='+ giphyUrl +'>' + giphyUrl + '</a></p></div>');
     imageResult.appendTo($('.searchResultField'));
 
-  });
-
-  $('#reset_button').on('click', function(){
-    // Grab the img using the id and change the src to empty to remove the image
-    $('.searchResultField').empty();
   });
 
   $('.search-text').html('<p>Search result for ' + q + '</p>');
@@ -44,7 +44,14 @@ response.data.forEach(function(x) {
 
 });
 
-$(document).on('click', '.sResultLink', function() {
+$(document).on('keyup', '.sResult',function(e){
+    if(e.which==13 || e.which==32){
+      $( this ).toggleClass( "fullScreen" );
+      $("html, body").animate({ scrollTop: 0 }, "300");
+      }
+})
+
+$(document).on('click', '.sResult', function() {
   $( this ).toggleClass( "fullScreen" );
   $("html, body").animate({ scrollTop: 0 }, "300");
 });
